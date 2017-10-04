@@ -2,7 +2,7 @@ from simulation import *
 from test import *
 
 def main():
-    # Input data ->Mahdi
+    # Input data ->
     customerInterArrivalTime = [1, 2, 3, 4]
     ableServiceTime = [5, 6, 7, 8]
     bakerServiceTime = [10, 11, 12, 13]
@@ -11,15 +11,15 @@ def main():
     customerCount = 100
     timeLength = 0
 
-    # Data processing  -> MrHs
+    # Data processing  ->
     count = customerCount
     lili = customerListGenerator(customerInterArrivalTime, ableServiceTime, bakerServiceTime, ableBakerPriority, count)
 
-    # printing output using django -> Mahdi
+    # printing output using django ->
 
     test(lili)
 
-    return 0
+    return
 
 
 if __name__ == "__main__" :
