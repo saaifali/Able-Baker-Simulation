@@ -1,0 +1,66 @@
+<html>
+<head>
+{% load staticfiles %}
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<link rel="stylesheet" href= "{% static 'css/style.css' %}">
+
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+</style>
+
+<title>SSM Event 1</title>
+</head>
+<body >
+<center>
+    <h3>ABLE BAKER Simulation Table</h3>
+    <h4>Welcome {{name}},</h4>
+</center>
+
+
+<table id="t01">
+  <tr>
+    <th>Cust No.</th>
+    <th>InterArrival Time</th>		
+    <th>Arrival Time</th>	
+    <th>When Able Avail</th>
+    <th>When Baker Avail</th>
+    <th>Server Chosen</th>	
+    <th>Sevice Time</th>	
+    <th>Time Sevice Begins</th>
+    <th>Able's Sevice Compl Time</th>	
+    <th>Baker's Sevice Compl Time</th>	
+    <th>Delay</th>
+    <th>Time in System</th>
+  </tr>
+{% for item_list in allData %}
+<tr>
+{% for item in item_list %}
+    <td>{{ item }}</td>
+{% endfor %}
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>

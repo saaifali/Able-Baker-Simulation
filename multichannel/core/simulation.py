@@ -34,7 +34,6 @@ def getServer(previous_customer, priority, arrival_time):
 
 
 def getServiceTime(server, able_list, baker_list):
-
     if server == ABLE:
         return random.choice(able_list)
     else:
@@ -53,11 +52,11 @@ def customerListGenerator(customer_time_list, able_list, baker_list, priority, c
 
             service_time = None
             if priority == ABLE :
-                service_time = random.choice(able_list)
+                service_time = getServiceTime(priority, able_list, baker_list)
                 cust.server = ABLE
                 cust.able_service_end_time = service_time
             elif priority == BAKER :
-                service_time = random.choice(baker_list)
+                service_time = getServiceTime(priority, able_list, baker_list)
                 cust.server = BAKER
                 cust.baker_service_end_time = service_time
             cust.service_time = service_time
