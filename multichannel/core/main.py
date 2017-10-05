@@ -8,7 +8,7 @@ def main():
     bakerServiceTime = [10, 11, 12, 13]
     ableBakerPriority = 0  # If 0 => Able is first if 1 => baker is first if 2 => randomly chosen
 
-    customerCount = 100
+    customerCount = 10
     timeLength = 0
 
     # Data processing  -> MrHs
