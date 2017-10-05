@@ -17,12 +17,18 @@ def getServer(previous_customer, priority, arrival_time):
         if (previous_customer.able_service_end_time <= arrival_time):
             return ABLE
         else:
-            return BAKER
+            if previous_customer.able_service_end_time <= previous_customer.baker_service_end_time :
+                return ABLE
+            else:
+                return BAKER
     elif priority==BAKER:
         if (previous_customer.baker_service_end_time <= arrival_time):
             return BAKER
         else:
-            return ABLE
+            if previous_customer.baker_service_end_time <= previous_customer.able_service_end_time :
+                return BAKER
+            else:
+                return ABLE
     else :
         return random.choice(SERVERS)
 
@@ -55,6 +61,7 @@ def customerListGenerator(customer_time_list, able_list, baker_list, priority, c
                 cust.server = BAKER
                 cust.baker_service_end_time = service_time
             cust.service_time = service_time
+            cust.time_in_system = service_time
             customer_list.append(cust)
 
         else : #all following customers
