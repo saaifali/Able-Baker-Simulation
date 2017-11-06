@@ -2,8 +2,8 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-from core.simulation import customerListGenerator
-from core.test import test
+from .core.simulation import customerListGenerator
+from .core.test import test
 # Create your views here.
 
 

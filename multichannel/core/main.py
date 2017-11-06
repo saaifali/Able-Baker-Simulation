@@ -1,4 +1,4 @@
-from simulation import *
+from .simulation import *
 from test import *
 
 def main():

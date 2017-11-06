@@ -1,4 +1,4 @@
-from customer import Customer
+from .customer import Customer
 import random
 
 
